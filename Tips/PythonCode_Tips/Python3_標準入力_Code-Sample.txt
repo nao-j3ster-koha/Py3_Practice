@@ -2,7 +2,7 @@
 
 ＜使用する関数＞ builtin moduleに含まれるinput()を使用する
 
-①：値の取得
+①：値の取得（1つの変数の中に、1つの値を代入する）
     →変数を設定して、その中に取得する
 
     parm = input()
@@ -14,6 +14,14 @@
     type(parm)          #parm変数の型を確認
     →<class 'str'>      #stringオブジェクトであることを確認
 
+    ①-1：変数に整数を代入する
+    parm = int(input())
+    12                  #整数「12」を代入
+
+    type(parm)          #parm変数の型を確認
+    ⇒<calss 'int'>     #integerオブジェクトであることを確認
+
+     
 
 
 
