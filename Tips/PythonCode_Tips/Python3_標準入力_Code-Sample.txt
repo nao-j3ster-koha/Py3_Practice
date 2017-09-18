@@ -2,7 +2,7 @@
 
 ＜使用する関数＞ builtin moduleに含まれるinput()を使用する
 
-①：値の取得（1つの変数の中に、1つの値を代入する）
+①：１行に１つの変数値を取得（1つの変数の中に、1つの値を代入する）
     →変数を設定して、その中に取得する
 
     parm = input()
@@ -21,7 +21,37 @@
     type(parm)          #parm変数の型を確認
     ⇒<calss 'int'>     #integerオブジェクトであることを確認
 
-     
+    ①-2：変数に浮動小数を代入する
+    parm = float(input())
+    1.2                 #浮動小数1.2を代入
+
+    type(parm)          #parm 変数の型を確認
+    →<class 'float'>    #float オブジェクトであることを確認
+
+②：１行にスペース区切りで複数の変数を入力
+
+    ②−１：全てをリストに格納したい場合
+     ②−１−１：文字列を入力する場合
+     parm_list = input().split()
+     <実行例＞
+     test word split 56
+
+     type(parm_list)
+     →<class 'list'>
+
+     parm_list
+     →（出力結果）
+     ['test', 'word', 'split', '56']        #全て文字で格納されている
+
+
+     ②-1-2：全てを整数で入力する場合
+
+
+
+
+
+
+
 
 
 
