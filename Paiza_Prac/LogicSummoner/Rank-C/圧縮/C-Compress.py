@@ -1,4 +1,4 @@
-
+# 検査対象文字列の入力
 srcStrings = input()
 
 while((len(srcStrings) < 1 or len(srcStrings) > 100) or (srcStrings.count('b') + srcStrings.count('w') != len(srcStrings)  )):

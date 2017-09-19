@@ -1,47 +1,50 @@
+# 変数の初期化
+srcList= []
+srcStrings = ''
+rsltStrings = ''
+preString = ''
+rsltList = []
+b_cnt = 0
+w_cnt = 0
+s_pos = 0
 
+# 文字列の入力
 srcStrings = input()
 
+#　文字列が条件を満たしているかをチェック
 while((len(srcStrings) < 1 or len(srcStrings) > 100) or (srcStrings.count('b') + srcStrings.count('w') != len(srcStrings)  )):
     srcStrings = input()
 
-tmp_list = []
-result_string = ''
-
+# 文字列を一時的にリスト化
 for val in srcStrings:
-    tmp_list.append(val)
+    srcList.append(val)
 
-result_list = []
-
-if(srcStrings[0] == 'w'):
-    result_list.append(0)
-
-line_pos = 0
-b_cnt = 0
-w_cnt = 0
+# 最初の文字列を判別
+if(srcList[0] == 'w'):
+    preString = '0 '
+else:
+    preString = ''
 
 
-for i in range(len(tmp_list)):
-    if(tmp_list[i] == 'b'):
-        b_cnt +=1
-        n = i
-        while( tmp_list[n+1] == tmp_list[n]):
+# 文字列の検査
+while( s_pos < len(srcList)):
+    if(srcList[s_pos] == 'b'):
+        b_cnt = 1
+        s_pos += 1
+        while( s_pos + 1 <= len(srcList)) and ( srcList[s_pos -1] == srcList[s_pos]):
             b_cnt += 1
-            n += 1
-        result_list.append(b_cnt)
-        i = n
+            s_pos +=1
+        rsltList.append(str(b_cnt))
     else:
-        w_cnt += 1
-        m = i
-        while( tmp_list[m+1] == tmp_list[m]):
+        w_cnt = 1
+        s_pos += 1
+        while( s_pos +1 <= len(srcList)) and ( srcList[s_pos -1] == srcList[s_pos]):
             w_cnt += 1
-            m += 1
-        result_list.append(w_cnt)
+            s_pos += 1
+        rsltList.append(str(w_cnt))
 
-result_string = ' '.join(result_list)
-print(result_string)
-
-
-
+rsltStrings = ' '.join(rsltList)
+print(preString + rsltStrings)
 
 
 
