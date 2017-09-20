@@ -23,10 +23,12 @@ for k in range(grpNum):
     chairPos = srcList[k][1]
     sitStatus = 0
     for m in range(chairPos-1,chairPos-1+prsnNum,1):
+        if( m >= tblLength):
+            m -= tblLength
         if ( tblStatus[m] == 0):
             sitStatus += 1
             tblStatus[m] = 1
-#            print(tblStatus)
+            print(tblStatus)
     if ( prsnNum == sitStatus):
         customerNum += prsnNum
 #        print(str(customerNum))

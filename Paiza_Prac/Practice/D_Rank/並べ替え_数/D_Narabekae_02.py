@@ -20,6 +20,7 @@ for n in range(0,len(src_data)):
             src_data[n] = w
             src_data[j] = t
         j += 1
+        print(src_data)
     n += 1
 
 for m in range(len(src_data)):
