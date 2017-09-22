@@ -11,7 +11,7 @@ while ( b < 1 or b > 100):
 while (c < 1 or c > 100):
     c = int(input())
 
-if( a == b )and (b == c):
+if( a == b == c):
     rslt = 'OK'
 else:
     rslt = 'NG'

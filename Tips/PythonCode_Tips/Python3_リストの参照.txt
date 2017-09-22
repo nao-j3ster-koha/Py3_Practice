@@ -1,0 +1,79 @@
+①：リストを使ったfor文でインデックスを取得する
+
+①-1：rangeを使った方法
+
+    list = ['python', 'Hello', 'world']
+
+    for i in range(len(list)):
+        list_item = list[i]
+        print('{0}:{1}'.format(i, list_item))
+
+    -->実行結果<--
+    0:python
+    1:Hello
+    2:world
+
+①-2：enumrateを使った方法
+    ⇒enumerate関数を使うと、要素のインデックスと要素を同時に取り出す事が出来る
+    　インデックスが変数1、要素が変数2に格納される
+
+    list = ['python', 'Hello', 'world']
+
+    for i, j in enumerate(list):
+        print('{0}:{1}'.format(i, j))
+
+    -->実行結果<--
+    0:python
+    1:Hello
+    2:world
+
+-*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--
+②：2つのリストを平行にループする
+
+②-1：rangeを使ってループさせる
+
+    list1 = ['python', 'Hello', 'world']
+    list2 = ['Python', 'programming', 'beginner']
+
+    for i in range(len(list1)):
+        print('list1:{0}, list2:{1}'.format(list1[i], list2[i]))
+
+    -->実行結果<--
+    list1:python, list2:Python
+    list1:Hello, list2:programming
+    list1:world, list2:beginner
+
+②-2：enumerateを使う
+
+        list1 = ['python', 'Hello', 'world']
+        list2 = ['Python', 'programming', 'beginner']
+
+        for i, j enumerate(list1):
+            print('list1:{0}, list2:{1}'.format(j, list2[i])
+
+
+    -->実行結果<--
+    list1:python, list2:Python
+    list1:Hello, list2:programming
+    list1:world, list2:beginner
+
+
+***ただし②-1と②-2の方法だと、2つのリストの長さが異なる場合にエラーになる****
+
+
+
+②-3：zip関数を使う
+　⇒②-1、②-2にあるような2つのリストの長さが異なる場合でもエラーにならずに
+　　2つのリストを並行に参照する。
+    リストの長さが違う場合は自動で短いリストの長さに合わせる。
+
+    list1 = ['python', 'Hello', 'world', 'test']
+    list2 = ['Python', 'programming', 'beginner']
+
+    for i, j in zip(list1, list2):          #最初の変数にリスト1の値、2番目の変数にリスト2の値が入る
+        print('{0}, {1}'.format(i,j))
+
+    -->実行結果<--
+    list1:python, list2:Python
+    list1:Hello, list2:programming
+    list1:world, list2:beginner
