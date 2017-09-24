@@ -12,7 +12,8 @@ s_pos = 0
 srcStrings = input()
 
 #　文字列が条件を満たしているかをチェック
-while((len(srcStrings) < 1 or len(srcStrings) > 100) or (srcStrings.count('b') + srcStrings.count('w') != len(srcStrings)  )):
+while((len(srcStrings) < 1 or len(srcStrings) > 100) \
+              or (srcStrings.count('b') + srcStrings.count('w') != len(srcStrings)  )):
     srcStrings = input()
 
 # 文字列を一時的にリスト化

@@ -28,7 +28,6 @@ for k in range(grpNum):
         if ( tblStatus[m] == 0):
             sitStatus += 1
             tblStatus[m] = 1            #テーブルステータスを変更するのが早い？（戻しを考慮していない・・・）
-            print(tblStatus)
     if ( prsnNum == sitStatus):
         customerNum += prsnNum
 #        print(str(customerNum))
