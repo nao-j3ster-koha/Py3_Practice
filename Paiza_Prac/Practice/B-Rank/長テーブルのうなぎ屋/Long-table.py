@@ -25,13 +25,14 @@ for k in range(grpNum):
     chairPos = srcList[k][1]
     rcvrPos = srcList[k][1]
     sitStatus = 0
+
     # 各リスト内の着席開始位置から必要数の座席が空いているか否かのチェック
     for m in range(chairPos-1,chairPos-1+prsnNum,1):
         if( m >= tblLength):
             m -= tblLength
         if ( tblStatus[m] == 0):
             sitStatus += 1
-#            tblStatus[m] = 1            #テーブルステータスを変更するのが早い？（戻しを考慮していない・・・）
+
     # 空席状況のチェック結果を確認→必要に応じて着席状況の更新
     if ( prsnNum == sitStatus):
         customerNum += prsnNum

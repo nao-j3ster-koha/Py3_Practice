@@ -1,0 +1,72 @@
+文字列メソッド
+
+
+1.str.capitalize()      ー＞ 最初の文字を大文字にし、残りを小文字にした文字列のコピーを返す
+    ＜使用例＞
+    tstStrings = 'hello,python'
+    tstStrings.capitalize()
+    ー＞（出力結果）
+        'Hello,python'
+
+
+2.str.casefold()
+    文字列の casefold されたコピーを返す
+    casefold された文字列は、大文字小文字に関係ないマッチに使える。
+    casefold は、小文字化と似ているが、より積極的な内容になる。
+    これは「文字列の大文字小文字の区別をすべて取り去る」ことを意図しているため
+
+    ※casefold のアルゴリズムは Unicode Standard のセクション 3.13 に記述されている
+    ＜使用例＞
+    testStrings ='Hello, Python'
+    testStrings.casefold()
+    ー＞（出力結果）
+        'hello, python'
+
+3.str.center(width[, fillchar])
+    ー＞width の長さをもつ中央寄せされた文字列を返す。
+        パディングには fillchar で指定された値 (デフォルトでは ASCII スペース) が使われる
+        width が len(s) 以下なら元の文字列が返される。
+
+    ＜使用例＞
+    testStrings = 'Hello'
+    testStrings.center(10)
+    ー＞（出力結果）
+        '  Hello   '
+
+     testStrings.center(10,'#')
+     ー＞（出力結果）
+        '##Hello###'
+
+4.str.count(sub[, start[, end]])
+    ー＞[start, end] の範囲に、部分文字列 sub が重複せず出現する回数を返す
+        オプション引数 start および end はスライス表記と同じように解釈される
+
+    ＜使用例＞
+    testStrings ='atEBEBFDHatatRHat'
+    testStrings.count('at')
+    ー＞（出力結果）
+        4
+
+    testStrings.count('at',0,12)
+    ー＞（出力結果）
+        2
+
+5.str.encode(encoding="utf-8", errors="strict")
+    ー＞文字列のエンコードされたバージョンを「バイト列オブジェクト」として返す
+        標準のエンコーディングは 'utf-8'
+        標準とは異なるエラー処理を行うために errors を与えることができる。
+        標準のエラー処理は 'strict' で、エンコードに関するエラーは UnicodeError を送出する。
+        他に利用できる値は
+            ・'ignore'    無視する
+            ・'replace'   置き換える
+            ・'xmlcharrefreplace'
+            ・'backslashreplace'
+            ・関数 codecs.register_error() によって登録された名前
+        これについてはセクション 「エラーハンドラ」 を参照する
+        利用可能なエンコーディングの一覧は、セクション 「標準エンコーディング」 を参照する
+
+
+
+
+
+
