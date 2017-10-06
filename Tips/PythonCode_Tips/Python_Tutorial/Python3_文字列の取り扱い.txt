@@ -187,6 +187,85 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     'Python is Great!!'
 
 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+???
+10.str.format_map(mapping)
+    →
+
+    ＜使用例＞
+    >>> class Default(dict):
+    ...     def __missing__(self, key):
+    ...         return key
+    ...
+    >>> '{name} was born in {country}'.format_map(Default(name='Guido'))
+    'Guido was born in country'
+
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+11.str.index(sub[, start[, end]])
+    →find()と同様だが、部分文字列が見つからなかったとき ValueError を送出する。
+
+    ＜使用例＞
+    1):正常に検索できる場合
+    testStrings = 'ajjghahgjhEDC'
+    testStrings.index('EDC')             # 文字列データ内の「EDC」文字列開始インデックスを確認する
+    →(実行結果)
+    10
+
+    2):検索で見つからない場合
+    testStrings = 'ajjghahgjhEDC'
+    testStrings.index('EDH')             # 文字列データ内の「EDH」文字列開始インデックスを確認する
+    →(実行結果)
+    Traceback (most recent call last):
+      File "<input>", line 1, in <module>
+    ValueError: substring not found
+
+    3):検索範囲の開始位置を指定する場合（正常系）
+    testStrings.index('EDC',5)             # 文字列データ内の5文字目以降で「EDC」文字列開始インデックスを確認する
+    →(実行結果)
+    10
+
+    4):検索範囲の開始位置を指定する場合（異常系）
+    testStrings.index('EDH',5)             # 文字列データ内の5文字目以降で「EDH」文字列開始インデックスを確認する
+    →(実行結果)
+    Traceback (most recent call last):
+      File "<input>", line 1, in <module>
+    ValueError: substring not found
+
+    5):検索範囲の開始位置と終了位置を指定する場合（正常系）
+    testStrings.index('EDC',5,13)             # 文字列データ内の5文字目～13文字目の間で「EDC」文字列開始インデックスを確認する
+    →(実行結果)
+    10
+
+    6):検索範囲の開始位置と終了位置を指定する場合（異常系）
+    testStrings.index('EDC',5,12)             # 文字列データ内の5文字目～12文字目の間で「EDC」文字列開始インデックスを確認する
+    →(実行結果)
+    Traceback (most recent call last):          # 検索範囲が１２文字目までだと「EDC」ではなく、「ED」のみになるため
+      File "<input>", line 1, in <module>
+    ValueError: substring not found
+
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+12.str.isalnum()
+    →文字列中の「全て」の文字が英数字で、かつ 1 文字以上あるなら真を、そうでなければ偽を返す。
+
+    ＜使用例＞
+    1):検索対象に数字が含まれている場合（正常）
+    testStrings = '1'
+    testStrings.isalnum()
+    →（実行結果）
+    True
+
+    2):検索対象に英数字以外が含まれている場合（異常）
+    testStrings = '1#hjkjha7877'
+    testStrings.isalnum()
+    →（実行結果）
+    False
+
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+
+
+
 
 
 
