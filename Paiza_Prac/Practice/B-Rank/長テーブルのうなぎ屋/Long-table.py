@@ -41,6 +41,4 @@ for k in range(grpNum):
                 n -= tblLength
             tblStatus[n] = 1
 
-#        print(str(customerNum))
-
 print(str(customerNum))
