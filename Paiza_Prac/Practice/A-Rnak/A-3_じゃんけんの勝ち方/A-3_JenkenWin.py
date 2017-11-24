@@ -84,6 +84,25 @@ def countFingNum(m):
 
 
 
+出す指の数 組み合わせ
+0   G
+2   C
+4   (C,C)
+5   (P
+6   (C,C,C)
+7   (P,C)
+8   (C,C,C,C)
+9   (P,C,C)
+11  (P,C,C,C)
+13  (P,C,C,C,C)
+15  (P,P,P) or (P,C,C,C,C,C)
+16  (C,C,C,C,C,C,C,C) or (P,P,C,C,C)
+17  (G,G,G,C) or (G,C,C,C,C,C,C)
+18  (C,C,C,C,C,C,C,C,C) or (P,P,C,C,C,C)
+19  (P,P,P,C,C)
+20
+
+
 
 
 
