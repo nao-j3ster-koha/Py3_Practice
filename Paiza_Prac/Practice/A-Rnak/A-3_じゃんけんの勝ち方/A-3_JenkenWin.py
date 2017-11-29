@@ -80,30 +80,34 @@ def countFingNum(m):
  indxC = [ i for i,x in enumerate(enmFingList) if x == 'C' ]
  for i in indxC:
     cntFingList[i] = 'G'
-    winCount += 1
-    
-5:相手の手が「’P’」の場合の自分手のリスト更新と勝利回数の更新
- 相手の手が'P'のリスト内Indexを取得
- indxP = [ i for i,x in enumerate(enmFingList) if x == 'P' ]
- for i in indxP:
-    if cntFingCount <= cntFingNum:
-        cntFingList[i] = 'C'
-        winCount += 1
-        cntFingCount += 2
-    else: cntFingList[i] = 'G'
-
-6:相手の手が「'G’」の場合の自分手のリスト更新と勝利回数の更新
- 相手の手が'G'のリスト内Indexを取得
- indxG = [ i for i,x in enumerate(enmFingList) if x == 'G' ]
- for i in indxG:
-    if cntFingCount <= cntFingNum:
-        cntFingList[i] = 'P'
-        winCount += 1
-        cntFingCount += 5
-    else: cntFingList[i] = 'C'
 
 
-"""
+
+
+出す指の数 組み合わせ
+0   G
+2   C
+4   (C,C)
+5   (P
+6   (C,C,C)
+7   (P,C)
+8   (C,C,C,C)
+9   (P,C,C)
+11  (P,C,C,C)
+13  (P,C,C,C,C)
+15  (P,P,P) or (P,C,C,C,C,C)
+16  (C,C,C,C,C,C,C,C) or (P,P,C,C,C)
+17  (G,G,G,C) or (G,C,C,C,C,C,C)
+18  (C,C,C,C,C,C,C,C,C) or (P,P,C,C,C,C)
+19  (P,P,P,C,C)
+20
+
+
+
+
+
+
+
 
 
 
