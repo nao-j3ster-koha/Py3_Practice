@@ -18,13 +18,11 @@ from datetime import datetime
 seed0 = 1509094800
 seed1 = 1509094800
 clockChar = datetime(2017,10,26,18,00,00)
-epochnum = int(datetime(2017,10,30,18,00,00).timestamp())
+epochnum = datetime(2017,10,27,00,00,00).timestamp()
 
-
-seedList = [epochnum * 1, epochnum * 30, epochnum * 10 , epochnum * 2017 ]
-seedList1 = [epochnum * 2017, epochnum * 10, epochnum * 30, epochnum * 1]
+seedList = [epochnum , epochnum * 27, epochnum * 10 , epochnum * 2017 ]
+seedList1 = [epochnum * 2017, epochnum * 10, epochnum * 27, epochnum]
 #seedList1 = [epochnum * 5, epochnum * 27, epochnum * 10, epochnum * 2017]
-
 
 
 def lcg01(n):
@@ -32,20 +30,27 @@ def lcg01(n):
     C = 1013904223
     M = 0xffffffff
     n = int(( A * n + C )) & M
-    return n % 32768
-#    return ( n / 65536 ) % 32768
+#    return n % 32768
+    return ( n / 65536 ) % 32768
+
+def lcg02(n):
+    A = 5
+    C = 3
+    M = 10
+    n = int(( A * n + C ))
+    return n
 
 
 def rand1(n):
     global seed1
     M = 2 ** 31 -1
     n = int((n * 1103515245 + 12345)) & M
-    return n % 32768
-#    return ( n / 65536 ) % 32768
-
+#    return n % 32768
+    return ( n / 65536 ) % 32768
 
 
 rslt_lcg01 = ''
+rslt_lcg02 = ''
 rslt_rand1 = ''
 rslt_rand2 = ''
 
@@ -53,10 +58,15 @@ for i in range(4):
     tmp0 = int(lcg01(seedList[i]) % 10)
     rslt_lcg01 += str(tmp0)
 
-    tmp1 = int(rand1(seedList1[i]) % 10)
-    rslt_rand1 += str(tmp1)
+    tmp1 = int(lcg02(seedList[i]) % 10)
+    rslt_lcg02 += str(tmp1)
+
+
+    tmp2 = int(rand1(seedList1[i]) % 10)
+    rslt_rand1 += str(tmp2)
 
 print('lcg01: ', rslt_lcg01)
+print('lcg02: ', rslt_lcg02)
 print('rand1: ', rslt_rand1)
 
 
