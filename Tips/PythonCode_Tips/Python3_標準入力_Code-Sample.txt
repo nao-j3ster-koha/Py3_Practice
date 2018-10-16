@@ -1,0 +1,140 @@
+標準入力からのデータ取得
+
+＜使用する関数＞ builtin moduleに含まれるinput()を使用する
+
+①：１行に１つの変数値を取得（1つの変数の中に、1つの値を代入する）
+    →変数を設定して、その中に取得する
+
+    parm = input()
+    →オブジェクトの型を指定しない限り、デフォルトで「String」オブジェクトになる
+    ＜実行例＞
+    parm = input()
+    f                   #文字「f」を入力
+
+    type(parm)          #parm変数の型を確認
+    →<class 'str'>      #stringオブジェクトであることを確認
+
+    ①-1：変数に整数を代入する
+    parm = int(input())
+    12                  #整数「12」を代入
+
+    type(parm)          #parm変数の型を確認
+    ⇒<calss 'int'>     #integerオブジェクトであることを確認
+
+    ①-2：変数に浮動小数を代入する
+    parm = float(input())
+    1.2                 #浮動小数1.2を代入
+
+    type(parm)          #parm 変数の型を確認
+    →<class 'float'>    #float オブジェクトであることを確認
+
+②：１行にスペース区切りで複数の変数を入力
+
+    ②−１：全てをリストに格納したい場合
+     ②−１−１：文字列を入力する場合
+     parm_list = input().split()
+     <実行例＞
+     test word split 56
+
+     type(parm_list)
+     →<class 'list'>
+
+     parm_list
+     →（出力結果）
+     ['test', 'word', 'split', '56']        #全て文字で格納されている
+
+     それぞれの内容を文字列として取り出す
+     for val in parm_list:
+        print(val)
+
+
+     ②-1-2：全てを整数で入力する場合
+     parm_list = list(map(int, input().split()))
+     <実行例＞
+     5 28 1 29 33 21
+
+     type(parm_list)
+     →（出力結果）
+     <class 'list'>
+
+     parm_list
+     →（出力結果）
+     [5, 28, 1, 29, 33, 21]             #全て数値で格納されている
+
+
+    ②-1-3：全てを浮動小数で入力する場合
+    parm_list = list(map(float, input().split())
+    <実行例>
+    1.2 0.005 3.53 2.1112
+
+    type(parm_list)
+    →（出力結果）
+     <class 'list'>
+
+     parm_list
+     →（出力結果）
+    [1.2, 0.005, 3.53, 2.1112]          #全て浮動小数で格納されている
+
+    ②-2：全てを個別の変数に入力したい場合
+     ②-2-1：文字列を入力する場合
+     str1,str2,str3 = map(str, input().split())
+     <実行例＞
+     test word list
+
+     str1           str2        str3
+     →'test'        →'word'     →'list'
+
+     type(str1)
+     →<class 'str'>
+
+
+     ②-2-2：整数を入力する場合
+     num1,num2,num3 = map(int, input().split())
+     <実行例>
+     2 5 18
+
+     num1       num2        num3
+     →2         →5          →18
+
+     type(num1)
+     →<class 'int'>
+
+
+     ②-2-3：浮動小数を入力する場合
+     flt1,flt2,flt3 = map(float, input().split())
+     <実行例>
+     1.2 2.0004 0.001
+
+     flt1       flt2        flt3
+     →1.2       →2.0004     →0.001
+
+     type(flt1)
+     →<class 'float'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
